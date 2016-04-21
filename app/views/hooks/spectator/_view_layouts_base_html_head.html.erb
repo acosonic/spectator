@@ -1,0 +1,6 @@
+<% if User.current.logged? && session[:spectator_id] && User.current.id != session[:spectator_id] %>
+  <style>
+    #top-menu {background: #880000; }
+    #footer { background-color:#880000; }
+  </style>
+<% end %>
