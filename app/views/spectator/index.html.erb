@@ -1,17 +1,19 @@
+<h1>Logged as: <%= User.current.name %></h1>
 
-<h2>
+
+<h3>
   <%= l(:login_as_user) %>:
   <%= form_tag spectator_change_user_path, method: "post", id: "change_user_form" do %>
     <%= text_field_tag 'user_change' %>
     <%= hidden_field_tag 'user_change_id' %>
     <%= submit_tag 'Change User' %>
   <% end %>
-</h2>
+</h3>
 
 <% if session[:spectator_id] %>
   <% user_orig = User.find(session[:spectator_id]) %>
   <% if user_orig != User.current %>
-    <h2>Change back to: <%= button_to user_orig.name, spectator_change_user_path, params: {user_change_id: user_orig.id} %></h2>
+    <h3>Change back to: <%= button_to user_orig.name, spectator_change_user_path, params: {user_change_id: user_orig.id} %></h3>
   <% end %>
 <% end %>
 
