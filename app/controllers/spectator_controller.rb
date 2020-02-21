@@ -1,6 +1,6 @@
 class SpectatorController < ApplicationController
 
-  before_filter :require_login, :check_page_access
+  before_action :require_login, :check_page_access
 
   def user_list
     @user_names = User.active.like(params[:term]).order(:firstname, :lastname).limit(10).map{|u| {label: u.name, value: u.id}}
