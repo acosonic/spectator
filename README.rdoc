@@ -5,3 +5,5 @@ This plugin adds possibility for admin user switch into another user account
 Installation:
 
  Just copy into plugins/spectator and restart redmine
+
+22.09.2022 changed name to spectator in order to make it work out of the box without modifying code will maybe modify code later
